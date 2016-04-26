@@ -1,0 +1,46 @@
+{
+  "name": "ContactsApplication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "semver": "^5.1.0",
+    "compass": "^0.1.1",
+	"bower": "1.7.1",
+    "express": "4.13.3",
+	"angular": "^1.5.3",
+    "angular-animate": "^1.5.3",
+    "angular-auto-validate": "^1.19.0",
+    "ladda": "^0.9.8",
+    "angular-ladda": "^0.3.1",
+    "angular-resource": "^1.5.3",
+    "spin.js": "2.0.1",
+    "angular-spinner": "^0.8.1",
+    "angular-strap": "^2.3.8",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "bootstrap-additions": "^0.3.1",
+    "font-awesome": "latest",
+    "ng-infinite-scroll": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annm1991/ContactsApplication.git"
+  },
+  "keywords": [
+    "contacts",
+    "application",
+    "angularJS",
+    "oAuth"
+  ],
+  "author": "Ann Mathew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annm1991/ContactsApplication/issues"
+  },
+  "homepage": "https://github.com/annm1991/ContactsApplication"
+}

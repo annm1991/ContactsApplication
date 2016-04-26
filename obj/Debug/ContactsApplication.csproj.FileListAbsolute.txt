@@ -1,0 +1,5 @@
+C:\Users\Ann\Documents\Visual Studio 2012\Projects\ContactsApplication\ContactsApplication\bin\ContactsApplication.dll
+C:\Users\Ann\Documents\Visual Studio 2012\Projects\ContactsApplication\ContactsApplication\bin\ContactsApplication.pdb
+C:\Users\Ann\Documents\Visual Studio 2012\Projects\ContactsApplication\ContactsApplication\obj\Debug\ContactsApplication.csprojResolveAssemblyReference.cache
+C:\Users\Ann\Documents\Visual Studio 2012\Projects\ContactsApplication\ContactsApplication\obj\Debug\ContactsApplication.dll
+C:\Users\Ann\Documents\Visual Studio 2012\Projects\ContactsApplication\ContactsApplication\obj\Debug\ContactsApplication.pdb
