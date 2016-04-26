@@ -1,0 +1,26 @@
+﻿<atom:entry xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:gd="http://schemas.google.com/g/2005">
+  <atom:category scheme="http://schemas.google.com/g/2005#kind"
+    term="http://schemas.google.com/contact/2008#contact"/>
+  <gd:name>
+     <gd:givenName>New</gd:givenName>
+     <gd:familyName>Name</gd:familyName>
+     <gd:fullName>New Name</gd:fullName>
+  </gd:name>
+  <atom:content type="text">Notes</atom:content>
+  <gd:email rel="http://schemas.google.com/g/2005#work"
+    primary="true"
+    address="new@name.com" displayName="New Name"/>
+  <gd:phoneNumber rel="http://schemas.google.com/g/2005#work"
+    primary="true">
+    (000)000-0000
+  </gd:phoneNumber>
+  <gd:structuredPostalAddress
+      rel="http://schemas.google.com/g/2005#work"
+      primary="true">
+    <gd:city>New City</gd:city>
+    <gd:street>New Street</gd:street>
+    <gd:country>New Country</gd:country>
+    <gd:formattedAddress>New Formatted Address</gd:formattedAddress>
+  </gd:structuredPostalAddress>
+</atom:entry>

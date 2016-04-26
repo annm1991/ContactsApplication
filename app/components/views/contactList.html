@@ -1,0 +1,60 @@
+﻿<div class="row">
+    <div class="btn btn-link pull-right"
+        ui-sref="viewCards">
+        Go to card view
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <!--infinite-scroll="loadMoreContacts()"
+            infinite-scroll-distance="1"
+            infinite-scroll-immediate-check="false"-->
+            <tr>
+                <th class="col1"></th>
+                <th class="col2">Name
+                <div class="sortIcons">
+                    <span class="glyphicon glyphicon-menu-up"
+                        ng-click="contactServ.ordering='name'"></span>
+                    <span class="glyphicon glyphicon-menu-down"
+                        ng-click="contactServ.ordering='-name'"></span>
+                </div>
+                </th>
+                <th class="col3">Email
+                <div class="sortIcons">
+                    <span class="glyphicon glyphicon-menu-up"
+                        ng-click="contactServ.ordering='email'"></span>
+                    <span class="glyphicon glyphicon-menu-down"
+                        ng-click="contactServ.ordering='-email'"></span>
+                </div>
+                </th>
+                <th class="col4">Phone
+                </th>
+            </tr>
+            <tr ng-repeat="contact in (filteredcontacts=(contactServ.contacts | filter:contactServ.search| orderBy: contactServ.ordering))"
+                ng-style="{'background-color': contact.email == contactServ.selectedContact.email ? 'lightgray' : ''}"
+                ui-sref="editContact({id: contact.email})">
+                <td class="col1">
+                    <img class="img-circle profilePic"
+                        ng-src="{{contact.photo + '&access_token=' + contactServ._currentUser.access_token  | defaultValue: 'app/data/defaultProfilePic.png'}}" 
+                        err-src="app/data/defaultProfilePic.png"/>
+                </td>
+                <td class="col2">{{contact.name}}
+                </td>
+                <td class="col3">{{contact.email}}
+                </td>
+                <td class="col4">{{contact.phonenumber}}
+                </td>
+            </tr>
+        </table>
+        <div ng-show="filteredcontacts.length == 0 && !contactServ.isLoading">
+            <div class="alert alert-info">
+                <p class="text-center">No results found for query {{search}}</p>
+            </div>
+        </div>
+        <div ng-show="contactServ.isLoading">
+            <span us-spinner="{radius:8, width:5, length:3, lines:9}"></span>
+        </div>
+    </div>
+</div>
+

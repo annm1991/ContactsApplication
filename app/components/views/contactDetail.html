@@ -1,0 +1,27 @@
+﻿<div class="col-md-8 col-md-offset-2">
+    <form class="form-horizontal"
+        ng-submit="save()"
+        novalidate>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{operation}}
+             <button type="submit"
+                 class="btn btn-primary btn-sm pull-right"
+                 ladda="contactServ.isSaving">
+                 <span ng-if="operation== 'Edit Contact'">Save</span>
+                 <span ng-if="operation== 'Create Contact'">Create</span>
+             </button>
+                <button class="btn btn-danger btn-sm pull-right"
+                    ladda="contactServ.isDeleting"
+                    ng-click="remove()"
+                    ng-if="operation== 'Edit Contact'">
+                    Delete</button>
+            </div>
+            <div class="panel-body">
+
+                <ng-include src="'app/components/templates/form.html'"></ng-include>
+
+            </div>
+        </div>
+    </form>
+</div>

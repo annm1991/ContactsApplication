@@ -1,0 +1,35 @@
+﻿<div class="col-md-6">
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-md-4">
+                <img ng-src="{{contact.photo + '&access_token=' + contactServ._currentUser.access_token | defaultValue: 'app/data/defaultProfilePic.png'}}"
+                    alt="{{contact.name}}"
+                    err-src="app/data/defaultProfilePic.png"
+                    class="img-responsive" 
+                    style="max-width: 80%;"/>
+            </div>
+            <div class="col-md-8">
+                <h4>{{contact.name}}
+                    <i class="fa"
+                        ng-class="{'fa-male': contact.sex == 'M', 
+                        'fa-female': contact.sex == 'F'}"></i>
+                </h4>
+                <small>{{contact.city}}, {{contact.country}}
+                    <i class="fa fa-map-marker"></i>
+                </small>
+                <p>
+                    <i class="fa fa-envelope-o"></i>{{contact.email}}
+                    <br />
+                </p>
+                <button type="button"
+                    class="btn btn-primary btn-sm"
+                    ui-sref="editContact({id: contact.email})"">
+                    <i class="fa fa-pencil"></i>Edit</button>
+                <button type="button"
+                    class="btn btn-danger btn-sm"
+                    ng-click="deleteContact()(contact)">
+                    <i class="fa fa-trash"></i>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

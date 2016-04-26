@@ -1,0 +1,74 @@
+﻿body {
+    padding-top: 50px;
+}
+.main-content {
+    padding: 40px 15px;
+}
+.spinner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.table tr .col1{
+    width: 5%;
+}
+.table tr .col2{
+    width: 30%;
+}
+.table tr .col3{
+    width: 30%;
+}
+.table tr .col4{
+    width: 30%;
+}
+.table tr .col5{
+    width: 5%;
+}
+.profilePic {
+    vertical-align: central;
+    height: 30px;
+    width: auto;
+}
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear; 
+}
+.modal-backdrop.am-fade.ng-enter {
+    opacity: 0; 
+}
+.modal-backdrop.am-fade.ng-enter.ng-enter-active {
+    opacity: .5; 
+}
+.modal-backdrop.am-fade.ng-leave {
+    opacity: .5; 
+}
+.modal-backdrop.am-fade.ng-leave.ng-leave-active {
+    opacity: 0; 
+}
+.sortIcons {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle; 
+}
+.sortIcons span:first-child {
+    position: absolute;
+    top: 0; 
+}
+.sortIcons span:last-child {
+    position: absolute;
+    bottom: 0; 
+}
+.sortIcons span {
+    color: lightgray;
+    font-size: 10px; 
+}
+.sortIcons span:hover {
+    color: #002a80; 
+}
+.panel-heading {
+    overflow: auto;
+}

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Contacts</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/flatly.css" rel="stylesheet" />
+    <link href="assets/css/ladda.min.css" rel="stylesheet" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-additions.css" rel="stylesheet" />
+    <link href="assets/css/toaster.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Contacts</a>
+            </div>
+            <div ui-view="search"></div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ui-sref-active="active">
+                        <a ui-sref="contactList">Search</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="createContact">Create</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container main-content">
+        <toaster-container></toaster-container>
+        <div ui-view="app"></div>
+    </div>
+</body>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="assets/lib/angular/angular.js"></script>
+<script src="assets/lib/angular-resource/angular-resource.min.js"></script>
+<script src="assets/lib/ngInfiniteScroll/ng-infinite-scroll.js"></script>
+<script src="assets/lib/spin.js/spin.js"></script>
+<script src="assets/lib/angular-spinner/angular-spinner.js"></script>
+<script src="assets/lib/angular-auto-validate/jcs-auto-validate.js"></script>
+<script src="assets/lib/ladda/dist/ladda.min.js"></script>
+<script src="assets/lib/angular-ladda/dist/angular-ladda.js"></script>
+<script src="assets/lib/angular-strap/angular-strap.js"></script>
+<script src="assets/lib/angular-strap/angular-strap.tpl.js"></script>
+<script src="assets/lib/angular-animate/angular-animate.js"></script>
+<script src="assets/lib/AngularJS-Toaster/toaster.js"></script>
+<script src="assets/lib/angular-ui-router/angular-ui-router.js"></script>
+<script src="assets/lib/jquery/jquery.js"></script>
+<script src="assets/lib/xml2json/xml2json.js"></script>
+<!--<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        //po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js?onload=onLoadCallback';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+
+    window.onLoadCallBack = function () {
+        console.log('index 1');
+        angular.element(document).ready(function () {
+            console.log('index 2');
+            gapi.client.load('oauth2', 'v2', function () {
+                console.log('index 3');
+                angular.bootstrap(document, ['myApp']);
+            });
+        });
+    };
+</script>-->
+<script src="app/app.js"></script>
+<script src="app/components/controllers/CreateController.js"></script>
+<script src="app/components/controllers/DetailController.js"></script>
+<script src="app/components/controllers/ListController.js"></script>
+<script src="app/components/controllers/LoginController.js"></script>
+<script src="app/components/directives/CardDirective.js"></script>
+<script src="app/components/factory/contactFactory.js"></script>
+<script src="app/components/filters/defaultValueFilter.js"></script>
+<script src="app/components/services/contactService.js"></script>
+<script src="app/components/directives/GoogleSignIn.js"></script>
+<!--<script>
+        /*function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            //$scope.profile.ID = profile.getId();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }*/
+        var config = {
+            'client_id': '1049813291335-b9auvpjbig687s5aom9v31bpokj2uj7t.apps.googleusercontent.com',
+            'scope': 'https://www.google.com/m8/feeds https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.me',
+            'immediate': 'false'
+        };
+
+        function handleClientLoad() {
+            console.log(config);
+            window.setTimeout(checkAuth, 1);
+        }
+
+        function checkAuth() {
+            console.log(config);
+            gapi.auth.authorize(config, handleAuthResult);
+        }
+
+        function handleAuthResult(authResult) {
+            var authorizeButton = document.getElementById('authorize-button');
+            if (authResult && !authResult.error) {
+                //authorizeButton.style.visibility = 'hidden';
+                //makeApiCall();
+                $.get("https://www.google.com/m8/feeds/contacts/default/thin?alt=json&access_token=" + authResult.access_token + "&max-results=500&v=3.0",
+                function (response) {
+                    //process the response here
+                    console.log(response);
+                });
+            }
+        }
+
+    </script>-->
+<script>
+    function onLoadCallBack() {
+        //console.log('index 1');
+        angular.element(document).ready(function () {
+            //console.log('index 2');
+            gapi.client.load('oauth2', 'v2', function () {
+                //console.log('index 3');
+                angular.bootstrap(document, ['myApp']);
+            });
+        });
+    };
+</script>
+<script src="https://apis.google.com/js/client:platform.js?onload=onLoadCallBack"></script>
+<!--<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js?onload=onLoadCallback';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>-->
+</html>
