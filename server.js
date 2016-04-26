@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require("express");
 var app = express();
 
 // set the port of our application
@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/app'));
 app.get('/', function(req, res) {
 
     // make sure index is in the right directory. In this case /app/index.html
-    res.render('index');
+    res.render('app/index');
 });
 
 app.listen(port, function() {
